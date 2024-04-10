@@ -1,0 +1,78 @@
+---
+title: A template for the arxiv style
+authors:
+  - name: David S. Hippocampus
+    thanks: Use footnote for providing further information about author (webpage, alternative address)---not for acknowledging funding agencies. Optional.
+    department: Department of Computer Science
+    affiliation: Cranberry-Lemon University
+    location: Pittsburgh, PA 15213
+    email: hippo@cs.cranberry-lemon.edu
+  - name: Elias D. Striatum
+    department: Department of Electrical Engineering
+    affiliation: Mount-Sheikh University
+    location: Santa Narimana, Levand
+    email: stariate@ee.mount-sheikh.edu
+abstract: |
+  Enter the text of your abstract here.
+keywords:
+  - blah
+  - blee
+  - bloo
+  - these are optional and can be removed
+bibliography: references.bib
+biblio-style: unsrt
+output: rticles::arxiv_article
+---
+
+##Vectores
+
+
+Un vector es una estructura de datos que almacena numeros de doble presicion
+
+{r}
+mi_vector_a <- c(12,64,12,54,23,12,65,34,12,56,66)
+mi_vector_b <- seq(1:16)
+
+mi_vector_a
+mi_vector_b
+
+
+## Matrices
+Las matrices se aprecen a los vectores, pero tienen filas y columnas.
+Se alimentan de vectores
+
+{r}
+mi_matriz_c <- matrix(mi_vector_b, nrow=4 , byrow=FALSE)
+mi_matriz_c
+
+Para acceder a un elemento de la matriz uso de las filas y columnas entre corchetes.
+
+{r}
+mi_matriz_c[2,3]
+
+
+¿Como traer la fila 4 completa?
+{r}
+mi_matriz_c[4, ]
+
+{r}
+mi_matriz_c[ ,1]
+
+¿Qué hará este comando?
+
+{r}
+mi_matriz_c[ -2, ]
+
+¿Cómo Trae toda la matriz manos la columna 2?
+{r}
+mi_matriz_c[,-2]
+
+
+{r}
+Start_time <- Sys.time()
+
+Vector_c <-seq(1,1000)
+matriz_c <-matrix(Vector_c, nrow=100, byrow=TRUE)
+end_time <- Sys.time()
+Tiempo_total <- end_time - Start_time
+print(paste("Tiempo total", Tiempo_total))
